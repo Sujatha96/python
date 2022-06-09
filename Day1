@@ -1,1 +1,354 @@
 # python
+print('Hello World!')
+print(4.5)
+print(4.5,"Hello")
+print("Hello",'end',87,False,end="\n")
+print("World")
+print("Hello",'end',87,False,end="|")
+print("World")
+
+#Data Types
+
+#Int
+#-75849
+#76483
+
+#Float
+#7204.0
+#-20.0
+
+#String
+#'hello'
+#"hello"
+#'2.8'
+
+#Boolean
+#True(1)
+#False(0)
+
+hello='time'
+world='world'
+world=hello
+hello='no'
+print(hello,world)
+
+
+# valid variables
+hello_world=''
+helloWorld=''    
+hello32=''
+
+#Invalid variables
+    #9  hello
+    #hello32
+    
+Name = input('Name: ')
+Age = input('Age: ')
+print(Name,' : ',Age)
+print('Hello',Name,', you are ',Age,'years old')
+
+from tkinter import Y
+
+
+x=9
+y=3
+result=(x%y)*2
+print(result)
+
+#Add,subtract,multiply,divide etc., 
+#can multiply numbers of different datatypes
+#Exponent **
+#Floor Division //
+#Mod % 
+# Order of Operations
+#   BEDMAS  -Brackets
+#           -Exponents
+#           -Division
+#           -Multiplication
+#           -Addition
+#           -Subtraction 
+
+num=input('Number: ') # considered as string
+#print(num-5) #error
+print(int(num)-5)
+print(float(num)-5)
+
+hello='hello world'.upper()
+print(type(hello))
+print(hello)
+print(hello.upper())
+print(hello.lower())
+print(hello.capitalize())
+print(hello.count('LL')) # Case sensitive
+print(hello.lower().count('o'))
+print('hello world'.upper())
+
+
+#method starts with a dot(.) operator
+
+x='hello'
+y=3
+z='yes'
+print(x*y)
+print(x+z)
+
+#compares two variables or datatypes and returns true or false
+#True or False
+# ==
+# != 
+# <=
+# >=
+
+x="hello"
+y='hello'
+print(x==y)
+print(x!=y)
+print(x>y)
+print('a'>'Z')
+print(ord('a')) #ASCII code
+print('ab'>'ade') #compares in dictionary order
+print(7.5>7)
+print(7.0==7)
+ans= 5==5
+print(ans)
+
+#CHAINED CONDITIONALS
+
+x=7
+y=8
+z=0
+result1 = x == y
+result2 = y > x
+result3 = z-2 < x+2
+
+#and - if both are true, result is true
+#or - if any one is true, result is true
+#not - opposite of result 
+#order - NOT AND OR
+
+result4=result1 or result2 
+
+print(not True)
+print(not(False or True))
+print(not(False and True or True))
+
+from multiprocessing import Condition
+
+
+x=input('Name: ')
+
+
+if x == 'Tim':
+    print('You are great!')
+elif x=='Pinky':
+    print('You are awesome!')
+else:
+    print("No")
+
+#Proper Indentation
+#Case sensitive
+
+print('Always do this')
+
+#Lists
+#Lists are mutable
+
+x=[4,True,'hi']
+print(len(x))
+y='hi'
+print(len(y))
+x.append('hello')
+x.extend([4,5,5])
+print(x.pop())
+print(x.pop(0)) #based on index
+print(x[1])
+x[0]='hello' #Lists are mutable
+print(x)
+y=x[:]
+print(x,y)
+
+#Tuples
+#Immutable Lists
+#doesnot have attribute append
+
+x=(0,1,2,3)
+print(x[0])
+
+x=[[],(),[[],[],[1,2,3]]]
+
+#For loop
+
+
+for i in range(10):
+    print(i)
+
+#for range function
+#start stop step
+#Ex: range(1,10,2): iterates alternatively as step is 2
+
+for i in [1,2,3,4,5]:
+    print(i)
+
+x=[2,3,4,5,6]
+for i in x:
+    print(i)
+for i in range(len(x)):
+    print(x[i])
+for i,element in enumerate(x):
+    print(i,element)
+
+
+#While loop
+
+i=0;
+while(i<10):
+    print('run')
+    i+=1
+
+#Sliced 
+#sliced=[start:stop:step]
+
+x=[0,1,2,3,4,5,6,7,8]
+y=(1,2,3,4,5,6,7,8)
+sliced=y[4:2:-1]
+slice=x[::-1]
+print(sliced)
+print(slice)
+
+x=set()
+s={4,32,2,2}
+print(type({}))
+print(s)
+s.add(5)
+s.remove(4)
+print(s)
+s2={4,32,2,2}
+print(2 in s2)
+print(33 in s)
+
+print(s.union(s2))
+print(s.intersection(s2))
+print(s.union(s2))
+
+x={'key': 4}
+print(x['key'])
+
+x['key2']=5
+x[2]=8
+x[3]=[2,4,3,2,1]
+print(x)
+print('key' in x)
+print(list(x.values()))
+print(list(x.keys()))
+del x['key']
+print(x)
+
+for key, value in x.items():
+    print(key,value)
+    
+x=[x+5 for x in range(5)]
+print(x)
+
+y=[[0 for x in range(100)] for x in range(5)]
+print(y)
+
+z=[i for i in range(100) if i%5==0]
+print(z)
+
+z=tuple(i for i in range(100) if i%5==0)
+print(z)
+
+def func():
+    print('Hello')
+    def func():
+        print('world!')
+    func()
+
+func()
+
+def func(x,y,z=None):
+    print('Run',x,y,z)
+    return x*y,x/y
+
+print(func(3,5,7))
+r1,r2=func(3,5)
+print(r1,r2)
+
+def func(x):
+    def func2():
+        print(x)
+    return func2
+
+print(func(3)())
+print(func(3))
+x=func(3)
+x()
+
+def func(*args,**kwargs):
+    pass
+
+x=[1,23,3,4,5]
+print(x)
+print(*x)
+
+def func(x,y):
+    print(x,y)
+
+pairs=[(1,2),(3,4)]
+
+for pair in pairs:
+    func(*pair)
+
+for pair in pairs:
+    func(**{'x':2,'y':5})
+
+
+def func(*args,**kwargs):
+    print(args,kwargs)
+    print(*args)
+    print(**kwargs)
+
+func(1,2,3,4,5,one=0,two=1)
+
+x='abc'
+
+def func(name):
+    global x
+    x=name
+
+
+print(x)
+func('changed')
+print(x)
+
+#raise Exception('Bad')
+
+#raise FileExistsError('Not Found!')
+
+try:
+    x=7/0
+except Exception as e:
+    print(e)
+finally:
+    print('finally')
+    
+x = lambda x: x+5
+print(x(2))
+
+x = lambda x,y: x+y
+print(x(2,5))
+
+#Maps and Filters
+
+x=[1,2,3,4,5,6,7,8,9]
+mp=map(lambda i: i*2, x)
+print(list(mp))
+
+x=[1,2,3,4,5,6,7,8,9]
+ft=filter(lambda i: i%2==0, x)
+print(list(ft))
+
+a=18
+x=f'hello {6+8} {20+8}'
+print(f'hello {a}')
+print(x)
