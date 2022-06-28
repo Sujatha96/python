@@ -1,0 +1,67 @@
+class Student():
+    
+    def __init__(self, marks1,marks2,credits1, credits2):
+        #YOUR CODE GOES HERE
+        self.marks1=marks1
+        self.marks2=marks2
+        self.credits1=credits1
+        self.credits2=credits2
+    
+    def grade_point_average(self):
+        gpa=0
+        #YOUR CODE GOES HERE
+        
+        points1=0
+        points2=0
+        
+        if self.marks1>90:
+            points1=10
+        elif 90>self.marks1>=75:
+            points1=9
+        elif 75>self.marks1>=60:
+            points1=8
+        elif 60>self.marks2>=45:
+            points1=7
+        else:
+            points1=0
+
+        if self.marks2>90:
+            points2=10
+        elif 90>self.marks2>=75:
+            points2=9
+        elif 75>self.marks2>=60:
+            points2=8
+        elif 60>self.marks2>=45:
+            points2=7
+        else:
+            points2=0
+
+        if(self.credits1!=0 and self.credits2!=0):
+            gpa=round(((points1*self.credits1)+(points2*self.credits2))/(self.credits1+self.credits2),2)
+            return gpa
+        else:
+            return "Zero credits for both subjects"
+    
+    
+    class Bill():
+
+    def __init__(self, prev_read, cur_read):
+        #YOUR CODE GOESS HERE
+        self.prev_read=prev_read
+        self.cur_read=cur_read
+        
+        
+    def total_bill(self):
+        total=0.0
+        #YOUR CODE GOESS HERE
+        units=self.cur_read-self.prev_read
+        sum=0.0
+        if units<=100:
+            sum=units*3.5
+        elif 100<units<=200:
+            sum=(100*3.5)+((units-100)*5)
+        else:
+            sum=(100*3.5)+(100*5)+((units-200)*8)
+        total=sum+150
+
+        return total
